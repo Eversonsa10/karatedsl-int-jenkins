@@ -1,4 +1,4 @@
-package bdd.runners;
+package bdd.feature;
 
 import com.intuit.karate.Results;
 import com.intuit.karate.Runner;
