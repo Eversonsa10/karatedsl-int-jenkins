@@ -6,7 +6,7 @@ pipeline {
         stage('Compile Stage') {
             steps {
                 script {
-                    def mvnHome = tool name: 'MAVEN', type: 'maven'
+                    def mvnHome = tool name: 'maven_3_9_9', type: 'maven'
                     withEnv(["PATH+MAVEN=${mvnHome}/bin"]) {
                         bat "${mvnHome}\\bin\\mvn clean compile"
                     }
@@ -18,9 +18,9 @@ pipeline {
         stage('Test Stage') {
             steps {
                 script {
-                    def mvnHome = tool name: 'MAVEN', type: 'maven'
+                    def mvnHome = tool name: 'maven_3_9_9', type: 'maven'
                     withEnv(["PATH+MAVEN=${mvnHome}/bin"]) {
-                        bat "${mvnHome}\\bin\\mvn test -Dtest=UsersRunner"
+                        bat "${mvnHome}\\bin\\mvn test -Dtest=PostsRunner"
                     }
                 }
             }
